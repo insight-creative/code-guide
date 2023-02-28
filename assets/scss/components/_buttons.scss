@@ -1,0 +1,126 @@
+.btn {
+  display: block;
+  width: fit-content;
+  padding: 0.5rem 2.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: $ic-100;
+  letter-spacing: 1.6px;
+
+  @include breakpoint(md) {
+    font-size: $ic-200;
+  }
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
+  position: relative;
+  z-index: 1;
+  color: $light-gray;
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40px;
+    border-radius: 50px;
+    z-index: -1;
+    transition: 0.3s ease;
+
+    @include breakpoint(md) {
+      width: 46px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+.btn-primary {
+  &::before {
+    background-color: $primary-color;
+  }
+}
+
+.btn-secondary {
+  color: $primary-color;
+
+  &::before {
+    background-color: $light-gray;
+  }
+}
+
+.btn-tertiary {
+  &::before {
+    background-color: $tertiary-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $body-black;
+
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn-filter {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: $ic-100 0;
+  transition: 0.3s ease;
+
+  svg {
+    fill: $primary-color;
+    width: $ic-400;
+    height: $ic-400;
+    margin-right: $ic-400;
+    position: relative;
+    top: -1px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+}
+
+.btn-arrow {
+  text-decoration: none;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: $light-gray;
+    vertical-align: middle;
+    transform: translateX(0);
+    transition: 0.3s ease;
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.center-button {
+  .btn {
+    margin: 0 auto;
+  }
+}

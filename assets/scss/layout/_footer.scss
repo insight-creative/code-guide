@@ -1,0 +1,35 @@
+.footer {
+  background-color: $dark-black;
+  font-size: $ic-200;
+
+  .footer__contact a,
+  .copyright a {
+    color: $white;
+    text-decoration: none;
+    display: block;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  .copyright {
+    font-size: 14px;
+    padding: $ic-100 0;
+
+    p {
+      margin: 0;
+    }
+
+    &__nav {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__list-item {
+      list-style-type: none;
+      margin: 0 $ic-100;
+    }
+  }
+}

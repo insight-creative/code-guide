@@ -1,0 +1,16 @@
+<footer id="footer" class="footer">
+  <div class="footer__bottom wrapper-lg">
+    <div class="footer__bottom-wrapper flex flex-column flex-row-m flex-justify-between flex-center">
+      <div class="copyright flex flex-column flex-row-m">
+        <p>© {{ dateFormat "2006" now }} {{ .Site.Data.site_settings.business_name }}</p>
+        <ul class="copyright__nav flex">
+          <li class="copyright__list-item"><a href="/privacy-policy/" class="copyright__nav-item">Privacy Policy</a></li>
+          <li class="copyright__list-item"><a href="/sitemap/" class="copyright__nav-item">Sitemap</a></li>
+          <li class="copyright__list-item"><a href="/contact/" class="copyright__nav-item">Contact Us</a></li>
+        </ul>
+      </div>
+      {{ partialCached "social-media" . }}
+    </div>
+  </div>
+</footer>
+{{ partial "scripts" . }}

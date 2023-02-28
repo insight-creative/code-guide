@@ -1,0 +1,48 @@
+{{ "<!-- Header -->" | safeHTML }}
+<a class="screen-reader-skip-to-content" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="screen-reader-skip-to-content" href="#footer" tabindex="0">Skip to footer content</a>
+<header class="site-header">
+  <div class="site-header__wrapper wrapper-lg">
+    <div class="site-header__logo">
+      <a class="brand-logo" href="{{ site.BaseURL }}">
+        {{ if .Site.Data.site_settings.logo }}
+          <img src="{{ .Site.Data.site_settings.logo | absURL }}" alt="{{ .Site.Data.site_settings.business_name }} logo" class="img-responsive dim" width="200" height="100">
+        {{ else }}
+          <h1>{{ site.Title }}</h1>
+        {{ end }}
+      </a>
+    </div>
+    <nav class="site-header__nav" aria-label="primary navigation">
+      <div class="site-header__primary">
+        <ul class="nav-list">
+          {{ $url := .RelPermalink }}
+          {{ range .Site.Menus.main }}
+          <li class="nav-list__item">
+            <a class="nav-list__link" href="{{ .URL }}" aria-label="{{ .Name }}">
+                {{ .Name }}
+            </a>
+          </li>   
+          {{ end }}
+        </ul>
+      </div>
+    </nav>
+    <div class="site-header__mobile-nav">
+      <div class="site-header__mobile-nav-inner">
+        <ul  class="site-header__mobile-nav-menu">
+          {{ range .Site.Menus.main }}
+          <li>
+            <a href="{{ .URL }}" aria-label="{{ .Name }}">
+                {{ .Name }}
+            </a>
+          </li>  
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+    <button class="hamburger hamburger--slider" type="button" aria-label="open mobile menu" aria-expanded="false">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
+  </div>
+</header>
