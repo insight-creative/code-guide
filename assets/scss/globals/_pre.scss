@@ -1,8 +1,7 @@
 pre {
-    background-color: $dark-black;
-    background-image: linear-gradient(8deg,$dark-black, $body-black);
-    padding: $ic-300;
-    font-size: 1rem;
-    overflow: auto;
-    max-width: none;
+    background-color: $dark-black !important;
+    background-image: linear-gradient(8deg,$dark-black, $body-black) !important;
+    padding: $ic-300 !important;
+    font-size: 1rem !important;
+    max-width: 600px;
 }
