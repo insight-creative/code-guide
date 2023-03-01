@@ -32,14 +32,6 @@ main:focus {
   outline: none;
 }
 
-.site-main {
-  position: relative;
-
-  @include breakpoint(md) {
-    margin-top: $desktop-header;
-  }
-}
-
 // Style highlight to match our themes colors
 ::-moz-selection {
   background: rgba($primary-color, 0.8);

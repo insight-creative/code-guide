@@ -535,9 +535,10 @@ Be sure to write in complete sentences for larger comments and succinct phrases 
 
 * Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., ```.btn``` and ```.btn--primary```).
 * Avoid excessive and arbitrary shorthand notation. ```.btn``` is useful for button, but ```.s``` doesn’t mean anything.
+* Use class names that make it easy to understand what styles are being applied.
 * Keep classes as short and succinct as possible.
 * Use meaningful names; use structural or purposeful names over presentational.
-* Prefix classes based on the closest parent or base class. Use the [BEM naming](https://getbem.com/naming/) approach here.
+* Keep naming conventions consistent so that it's easier to internalize and understand class names. Use the [BEM naming](https://getbem.com/naming/) approach here.
 * Use ```.js-*``` classes to denote behavior (as opposed to style), but keep these classes out of your CSS.
 
 It’s also useful to apply many of these same rules when creating custom properties and preprocessor variable names.
@@ -557,6 +558,51 @@ It’s also useful to apply many of these same rules when creating custom proper
 .tweet { ... }
 .important { ... }
 .tweet-header { ... }
+```
+{{< /code-css >}}
+{{< /column >}}
+
+{{< column >}}
+### Class names
+
+Components should follow the [Block Element Modifier (BEM)](https://getbem.com/naming/) model in terms of structure.
+
+**Block:** Encapsulates a standalone entity that is meaningful on its own. While blocks can be nested and interact with each other, semantically they remain equal; there is no precedence or hierarchy. Holistic entities without DOM representation (such as controllers or models) can be blocks as well. A block includes all of the base styles you want shared across every variation of a component. Minimal thematic styling should be applied to blocks, particularly when variations of a component include visual variations. Apply additional styles with modifiers rather than overriding base styles.
+
+**Element:** An element is part of a component. Elements should work together with other elements and can have modifiers. Element styles should not override block styles - this often results in applying more styles directly to elements rather than having styles flow down from the parent level.
+
+**Modifier:** A modifier is a variation that can be applied to the base component or to an element within the component. Modifiers shouldn't override block styles, they should add onto them.
+
+{{< /column >}}
+
+{{< column >}}
+{{< code-html >}}
+```
+<!-- Bad -->
+<div class="block--mod">...</div>
+```
+```
+<!-- Good -->
+<div class="block block--mod">...</div>
+<div class="block block--size-big block--shadow-yes">...</div>
+```
+```
+<!-- Example -->
+<form class="form form--simple">
+  <input class="form__input" type="text" />
+  <input
+    class="form__submit form__submit--disabled"
+    type="submit" />
+</form>
+```
+{{< /code-html >}}
+{{< code-css >}}
+```
+.form { }
+.form--simple { }
+.form__input { }
+.form__submit { }
+.form__submit--disabled { }
 ```
 {{< /code-css >}}
 {{< /column >}}

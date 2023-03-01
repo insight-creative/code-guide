@@ -1,14 +1,9 @@
-@import "globals/reset";
-@import "globals/breakpoints";
-@import "globals/variables";
-@import "globals/typography";
-@import "globals/images";
+@import "globals";
 
-@import "components/hero";
-@import "components/buttons";
-@import "components/hamburger";
-@import "components/cta";
+@import "components";
 
 @import "layout";
+
+@import "pages";
 
 @import "utilities";
