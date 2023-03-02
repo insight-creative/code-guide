@@ -27,36 +27,31 @@ hero:
 {{< column >}}
 ### HTML
 
-* HTML syntax
-* HTML5 doctype
-* Language attribute
-* Character encoding
-* CSS and JavaScript includes
-* Practicality over purity
-* Attribute order
-* Reduce markup
-* Editor preferences
+* [HTML syntax](#syntax)
+* [HTML5 doctype](#html5-doctype)
+* [Language attribute](#language-attribute)
+* [Character encoding](#character-encoding)
+* [CSS and JavaScript includes](#css-and-javascript-includes)
+* [Practicality over purity](#practicality-over-purity)
+* [Attribute order](#attribute-order)
+* [Reduce markup](#reduce-markup)
 
 {{< /column >}}
 
 {{< column >}}
 ### CSS
 
-* CSS syntax
-* Declaration order
-* Colors
-* Logical properties
-* Avoid @import`s
-* Media query placement
-* Single declarations
-* Shorthand notation
-* Nesting in preprocessors
-* Operators in preprocessors
-* Comments
-* Class names
-* Selectors
-* Child and descendant selectors
-* Organization
+* [CSS syntax](#css-syntax)
+* [Declaration order](#declaration-order)
+* [Logical properties](#logical-properties)
+* [Colors](#colors)
+* [Media query placement](#media-query-placement)
+* [Shorthand notation](#shorthand-notation)
+* [Comments](#comments)
+* [Class names](#class-names)
+* [Components](#components)
+* [Selectors](#selectors)
+* [Organization](#organization)
 
 {{< /column >}}
 
@@ -278,7 +273,7 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 {{< /column >}}
 
 {{< column >}}
-### Syntax
+### CSS Syntax
 
 * When grouping selectors, keep individual selectors to a single line.
 * Include one space before the opening brace of declaration blocks for legibility.
@@ -563,7 +558,7 @@ It’s also useful to apply many of these same rules when creating custom proper
 {{< /column >}}
 
 {{< column >}}
-### Class names
+### Components
 
 Components should follow the [Block Element Modifier (BEM)](https://getbem.com/naming/) model in terms of structure.
 
