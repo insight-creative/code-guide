@@ -35,6 +35,8 @@ hero:
 * [Practicality over purity](#practicality-over-purity)
 * [Attribute order](#attribute-order)
 * [Reduce markup](#reduce-markup)
+* [Image handling](#image-handling)
+* [Image naming](#image-naming)
 
 {{< /column >}}
 
@@ -83,7 +85,7 @@ Every line of code should appear to be written by a single person, no matter the
 * Nested elements should be indented once.
 * Always use double quotes, never single quotes, on attributes.
 * Don’t include a trailing slash in self-closing elements—the HTML5 spec says they’re optional.
-* Don’t omit optional closing tags (e.g. </li> or </body>).
+* Don’t omit optional closing tags (e.g. ```</li>``` or ```</body>```).
 {{< /column >}}
 
 
@@ -134,7 +136,7 @@ From the HTML5 spec:
 
 Authors are encouraged to specify a lang attribute on the root html element, giving the document’s language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.
 
-Read more about the lang attribute in the spec. Head to the IANA for a list of language codes.
+Read more about the lang attribute in the spec.
 {{< /column >}}
 
 
@@ -260,6 +262,52 @@ Whenever possible, avoid superfluous parent elements when writing HTML. Many tim
 ```
 <!-- Better -->
 <img class="avatar" src="...">
+```
+{{< /code-html >}}
+{{< /column >}}
+
+{{< column >}}
+## Image handling
+
+Images should always be handled with care with performance at the forefront of every decision. It will be rare that you will ever output an image in a simple ```<img>``` tag. You will almost always want to use a responsive image strategy with a ```<picture>``` element and multiple sources. This will allow you to take advantage of modern image formats like AVIF and WEBP.
+
+{{< /column >}}
+
+
+{{< column >}}
+{{< code-html >}}
+```
+<!-- Not so great -->
+<img src="...">
+```
+```
+<!-- Better -->
+<picture>
+  <source sizes="(min-width: 62rem) 50vw, 100vw" srcset="..." type="image/avif">
+  <source sizes="(min-width: 62rem) 50vw, 100vw" srcset="..." type="image/webp">
+  <source sizes="(min-width: 62rem) 50vw, 100vw" srcset="..." type="image/jpg">
+  <img src="..." alt="..." width="1200" height="800">   
+</picture>
+```
+{{< /code-html >}}
+{{< /column >}}
+
+{{< column >}}
+## Image naming
+
+Ensure that your images are named for clarity and optimal SEO value. Image names should use a format similar to what your alternative text will be, this will not only provide slight SEO value but also give your image name a clear description. 
+{{< /column >}}
+
+
+{{< column >}}
+{{< code-html >}}
+```
+<!-- Bad -->
+<img src="DSC007.jpg">
+```
+```
+<!-- Better -->
+<img src="insight-creative-team-building-websites.jpg">
 ```
 {{< /code-html >}}
 {{< /column >}}
